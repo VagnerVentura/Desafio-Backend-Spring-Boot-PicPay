@@ -23,7 +23,7 @@ public class Wallet {
 	private String fullName;
 	
 	@Column(name = "cpf_cnpj", unique = true)
-	private Integer cpfCnpj;
+	private String cpfCnpj;
 	
 	@Column(name = "email", unique = true)
 	private String email;
@@ -39,7 +39,28 @@ public class Wallet {
 	private WalletType walletType;
 
 	public Wallet() {}
-	
+
+	public Wallet(Long id, String fullName, String cpfCnpj, String email, String password, BigDecimal balance,
+			WalletType walletType) {
+		this.id = id;
+		this.fullName = fullName;
+		this.cpfCnpj = cpfCnpj;
+		this.email = email;
+		this.password = password;
+		this.balance = balance;
+		this.walletType = walletType;
+	}
+
+	public Wallet(String fullName, String cpfCnpj, String email, String password, BigDecimal balance,
+			WalletType walletType) {
+		this.fullName = fullName;
+		this.cpfCnpj = cpfCnpj;
+		this.email = email;
+		this.password = password;
+		this.balance = balance;
+		this.walletType = walletType;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -56,11 +77,11 @@ public class Wallet {
 		this.fullName = fullName;
 	}
 
-	public Integer getCpfCnpj() {
+	public String getCpfCnpj() {
 		return cpfCnpj;
 	}
 
-	public void setCpfCnpj(Integer cpfCnpj) {
+	public void setCpfCnpj(String cpfCnpj) {
 		this.cpfCnpj = cpfCnpj;
 	}
 
@@ -96,16 +117,6 @@ public class Wallet {
 		this.walletType = walletType;
 	}
 
-	public Wallet(Long id, String fullName, Integer cpfCnpj, String email, String password, BigDecimal balance,
-			WalletType walletType) {
-		this.id = id;
-		this.fullName = fullName;
-		this.cpfCnpj = cpfCnpj;
-		this.email = email;
-		this.password = password;
-		this.balance = balance;
-		this.walletType = walletType;
-	}
 
 	
 	

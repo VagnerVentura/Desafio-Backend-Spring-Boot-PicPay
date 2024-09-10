@@ -1,5 +1,9 @@
 package vagner.ventura.com.picpay.repositories;
 
-public class WalletRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import vagner.ventura.com.picpay.entities.Wallet;
+
+public interface WalletRepository extends JpaRepository<Wallet, Long>{
 
 }
